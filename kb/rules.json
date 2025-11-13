@@ -1,0 +1,852 @@
+{
+  "_swignondynamicmeta": {
+    "class": "_SwigNonDynamicMeta",
+    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "keywords": [
+      "_swignondynamicmeta"
+    ],
+    "code": [
+      "# TODO: No auto template for _SwigNonDynamicMeta"
+    ]
+  },
+  "swigpyiterator": {
+    "class": "SwigPyIterator",
+    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "keywords": [
+      "swigpyiterator"
+    ],
+    "code": [
+      "# TODO: No auto template for SwigPyIterator"
+    ]
+  },
+  "basiliskerror": {
+    "class": "BasiliskError",
+    "module": "architecture.sysModel",
+    "keywords": [
+      "basiliskerror"
+    ],
+    "code": [
+      "# TODO: No auto template for BasiliskError"
+    ]
+  },
+  "bsklogger": {
+    "class": "BSKLogger",
+    "module": "architecture.sysModel",
+    "keywords": [
+      "bsklogger"
+    ],
+    "code": [
+      "# TODO: No auto template for BSKLogger"
+    ]
+  },
+  "sysmodel": {
+    "class": "SysModel",
+    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "keywords": [
+      "sysmodel"
+    ],
+    "code": [
+      "# TODO: No auto template for SysModel"
+    ]
+  },
+  "algcontain": {
+    "class": "AlgContain",
+    "module": "architecture.alg_contain",
+    "keywords": [
+      "algcontain"
+    ],
+    "code": [
+      "# TODO: No auto template for AlgContain"
+    ]
+  },
+  "eigen3dvector": {
+    "class": "Eigen3dVector",
+    "module": "architecture.bskUtilities",
+    "keywords": [
+      "eigen3dvector"
+    ],
+    "code": [
+      "# TODO: No auto template for Eigen3dVector"
+    ]
+  },
+  "keplerianorbit": {
+    "class": "KeplerianOrbit",
+    "module": "architecture.keplerianOrbit",
+    "keywords": [
+      "keplerianorbit",
+      "orbit",
+      "kepler"
+    ],
+    "code": [
+      "oe = architecture.keplerianOrbit.KeplerianOrbit()",
+      "oe.a = 7000e3",
+      "oe.e = 0.0",
+      "oe.i = 0.0",
+      "oe.Omega = 48.2 * macros.D2R",
+      "oe.omega = 347.8 * macros.D2R",
+      "oe.f = 85.3 * macros.D2R",
+      "rN, vN = orbitalMotion.elem2rv(oe)",
+      "sc.hub.r_CN_NInit = rN",
+      "sc.hub.v_CN_NInit = vN"
+    ]
+  },
+  "classicelements": {
+    "class": "ClassicElements",
+    "module": "utilities.orbitalMotion",
+    "keywords": [
+      "orbit",
+      "kepler",
+      "classicelements"
+    ],
+    "code": [
+      "oe = utilities.orbitalMotion.ClassicElements()",
+      "oe.a = 7000e3",
+      "oe.e = 0.0",
+      "oe.i = 0.0",
+      "oe.Omega = 48.2 * macros.D2R",
+      "oe.omega = 347.8 * macros.D2R",
+      "oe.f = 85.3 * macros.D2R",
+      "rN, vN = orbitalMotion.elem2rv(oe)",
+      "sc.hub.r_CN_NInit = rN",
+      "sc.hub.v_CN_NInit = vN"
+    ]
+  },
+  "equinoctialelements": {
+    "class": "EquinoctialElements",
+    "module": "utilities.orbitalMotion",
+    "keywords": [
+      "equinoctialelements",
+      "orbit",
+      "kepler"
+    ],
+    "code": [
+      "oe = utilities.orbitalMotion.EquinoctialElements()",
+      "oe.a = 7000e3",
+      "oe.e = 0.0",
+      "oe.i = 0.0",
+      "oe.Omega = 48.2 * macros.D2R",
+      "oe.omega = 347.8 * macros.D2R",
+      "oe.f = 85.3 * macros.D2R",
+      "rN, vN = orbitalMotion.elem2rv(oe)",
+      "sc.hub.r_CN_NInit = rN",
+      "sc.hub.v_CN_NInit = vN"
+    ]
+  },
+  "moduleidgenerator": {
+    "class": "ModuleIdGenerator",
+    "module": "architecture.moduleIdGenerator",
+    "keywords": [
+      "moduleidgenerator"
+    ],
+    "code": [
+      "# TODO: No auto template for ModuleIdGenerator"
+    ]
+  },
+  "intvector": {
+    "class": "IntVector",
+    "module": "architecture.sys_model_task",
+    "keywords": [
+      "intvector"
+    ],
+    "code": [
+      "# TODO: No auto template for IntVector"
+    ]
+  },
+  "doublevector": {
+    "class": "DoubleVector",
+    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "keywords": [
+      "doublevector"
+    ],
+    "code": [
+      "# TODO: No auto template for DoubleVector"
+    ]
+  },
+  "multiarray": {
+    "class": "MultiArray",
+    "module": "architecture.swig_common_model",
+    "keywords": [
+      "multiarray"
+    ],
+    "code": [
+      "# TODO: No auto template for MultiArray"
+    ]
+  },
+  "stringvector": {
+    "class": "StringVector",
+    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "keywords": [
+      "stringvector"
+    ],
+    "code": [
+      "# TODO: No auto template for StringVector"
+    ]
+  },
+  "stringset": {
+    "class": "StringSet",
+    "module": "architecture.swig_common_model",
+    "keywords": [
+      "stringset"
+    ],
+    "code": [
+      "# TODO: No auto template for StringSet"
+    ]
+  },
+  "intset": {
+    "class": "intSet",
+    "module": "architecture.swig_common_model",
+    "keywords": [
+      "intset"
+    ],
+    "code": [
+      "# TODO: No auto template for intSet"
+    ]
+  },
+  "int64set": {
+    "class": "int64Set",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "int64set"
+    ],
+    "code": [
+      "# TODO: No auto template for int64Set"
+    ]
+  },
+  "constcharvector": {
+    "class": "ConstCharVector",
+    "module": "architecture.sys_model_task",
+    "keywords": [
+      "constcharvector"
+    ],
+    "code": [
+      "# TODO: No auto template for ConstCharVector"
+    ]
+  },
+  "exchangeset": {
+    "class": "exchangeSet",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "exchangeset"
+    ],
+    "code": [
+      "# TODO: No auto template for exchangeSet"
+    ]
+  },
+  "modelpripair": {
+    "class": "modelPriPair",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "modelpripair"
+    ],
+    "code": [
+      "# TODO: No auto template for modelPriPair"
+    ]
+  },
+  "procschedlist": {
+    "class": "procSchedList",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "procschedlist"
+    ],
+    "code": [
+      "# TODO: No auto template for procSchedList"
+    ]
+  },
+  "simproclist": {
+    "class": "simProcList",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "simproclist"
+    ],
+    "code": [
+      "# TODO: No auto template for simProcList"
+    ]
+  },
+  "modelprioritypair": {
+    "class": "ModelPriorityPair",
+    "module": "architecture.sys_model_task",
+    "keywords": [
+      "modelprioritypair"
+    ],
+    "code": [
+      "# TODO: No auto template for ModelPriorityPair"
+    ]
+  },
+  "sysmodeltask": {
+    "class": "SysModelTask",
+    "module": "architecture.sys_model_task",
+    "keywords": [
+      "sysmodeltask"
+    ],
+    "code": [
+      "# TODO: No auto template for SysModelTask"
+    ]
+  },
+  "modelscheduleentry": {
+    "class": "ModelScheduleEntry",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "modelscheduleentry"
+    ],
+    "code": [
+      "# TODO: No auto template for ModelScheduleEntry"
+    ]
+  },
+  "sysprocess": {
+    "class": "SysProcess",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "sysprocess"
+    ],
+    "code": [
+      "# TODO: No auto template for SysProcess"
+    ]
+  },
+  "simthreadexecution": {
+    "class": "SimThreadExecution",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "simthreadexecution"
+    ],
+    "code": [
+      "# TODO: No auto template for SimThreadExecution"
+    ]
+  },
+  "simmodel": {
+    "class": "SimModel",
+    "module": "architecture.sim_model",
+    "keywords": [
+      "simmodel"
+    ],
+    "code": [
+      "# TODO: No auto template for SimModel"
+    ]
+  },
+  "_deprecatedwrapper": {
+    "class": "_DeprecatedWrapper",
+    "module": "architecture.swig_deprecated",
+    "keywords": [
+      "_deprecatedwrapper"
+    ],
+    "code": [
+      "# TODO: No auto template for _DeprecatedWrapper"
+    ]
+  },
+  "swigdeprecatedtestclass": {
+    "class": "SwigDeprecatedTestClass",
+    "module": "architecture.swigDeprecatedCheck",
+    "keywords": [
+      "swigdeprecatedtestclass"
+    ],
+    "code": [
+      "# TODO: No auto template for SwigDeprecatedTestClass"
+    ]
+  },
+  "intarray3": {
+    "class": "IntArray3",
+    "module": "architecture.swigEigenCheck",
+    "keywords": [
+      "intarray3"
+    ],
+    "code": [
+      "# TODO: No auto template for IntArray3"
+    ]
+  },
+  "swigeigentestclass": {
+    "class": "SwigEigenTestClass",
+    "module": "architecture.swigEigenCheck",
+    "keywords": [
+      "swigeigentestclass"
+    ],
+    "code": [
+      "# TODO: No auto template for SwigEigenTestClass"
+    ]
+  },
+  "multiarray3d": {
+    "class": "MultiArray3d",
+    "module": "architecture.swig_common_model",
+    "keywords": [
+      "multiarray3d"
+    ],
+    "code": [
+      "# TODO: No auto template for MultiArray3d"
+    ]
+  },
+  "_sysmodel": {
+    "class": "_SysModel",
+    "module": "architecture.sysModel",
+    "keywords": [
+      "_sysmodel"
+    ],
+    "code": [
+      "# TODO: No auto template for _SysModel"
+    ]
+  },
+  "superinitchecker": {
+    "class": "SuperInitChecker",
+    "module": "architecture.sysModel",
+    "keywords": [
+      "superinitchecker"
+    ],
+    "code": [
+      "# TODO: No auto template for SuperInitChecker"
+    ]
+  },
+  "timevector": {
+    "class": "TimeVector",
+    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "keywords": [
+      "timevector"
+    ],
+    "code": [
+      "# TODO: No auto template for TimeVector"
+    ]
+  },
+  "vizeventreply": {
+    "class": "VizEventReply",
+    "module": "architecture.messaging.VizUserInputMsgPayload",
+    "keywords": [
+      "vizeventreply"
+    ],
+    "code": [
+      "# TODO: No auto template for VizEventReply"
+    ]
+  },
+  "bskdeprecationwarning": {
+    "class": "BSKDeprecationWarning",
+    "module": "utilities.deprecated",
+    "keywords": [
+      "bskdeprecationwarning"
+    ],
+    "code": [
+      "# TODO: No auto template for BSKDeprecationWarning"
+    ]
+  },
+  "bskurgentdeprecationwarning": {
+    "class": "BSKUrgentDeprecationWarning",
+    "module": "utilities.deprecated",
+    "keywords": [
+      "bskurgentdeprecationwarning"
+    ],
+    "code": [
+      "# TODO: No auto template for BSKUrgentDeprecationWarning"
+    ]
+  },
+  "ignore": {
+    "class": "ignore",
+    "module": "utilities.deprecated",
+    "keywords": [
+      "ignore"
+    ],
+    "code": [
+      "# TODO: No auto template for ignore"
+    ]
+  },
+  "deprecatedattribute": {
+    "class": "DeprecatedAttribute",
+    "module": "utilities.deprecated",
+    "keywords": [
+      "deprecatedattribute"
+    ],
+    "code": [
+      "# TODO: No auto template for DeprecatedAttribute"
+    ]
+  },
+  "deprecatedproperty": {
+    "class": "DeprecatedProperty",
+    "module": "utilities.deprecated",
+    "keywords": [
+      "deprecatedproperty"
+    ],
+    "code": [
+      "# TODO: No auto template for DeprecatedProperty"
+    ]
+  },
+  "modulegenerator": {
+    "class": "moduleGenerator",
+    "module": "utilities.makeDraftModule",
+    "keywords": [
+      "modulegenerator"
+    ],
+    "code": [
+      "# TODO: No auto template for moduleGenerator"
+    ]
+  },
+  "pythonvariablelogger": {
+    "class": "PythonVariableLogger",
+    "module": "utilities.pythonVariableLogger",
+    "keywords": [
+      "pythonvariablelogger"
+    ],
+    "code": [
+      "# TODO: No auto template for PythonVariableLogger"
+    ]
+  },
+  "withgravfield": {
+    "class": "WithGravField",
+    "module": "utilities.simIncludeGravBody",
+    "keywords": [
+      "gravity",
+      "earth gravity",
+      "withgravfield"
+    ],
+    "code": [
+      "# TODO: No auto template for WithGravField"
+    ]
+  },
+  "gravbodyfactory": {
+    "class": "gravBodyFactory",
+    "module": "utilities.simIncludeGravBody",
+    "keywords": [
+      "gravbodyfactory",
+      "earth gravity",
+      "gravity"
+    ],
+    "code": [
+      "gravFactory = simIncludeGravBody.gravBodyFactory()",
+      "planet = gravFactory.createEarth()",
+      "gravFactory.addBodiesTo(scObject)",
+      "mu = planet.mu"
+    ]
+  },
+  "rwfactory": {
+    "class": "rwFactory",
+    "module": "utilities.simIncludeRW",
+    "keywords": [
+      "rwfactory",
+      "rw",
+      "reaction wheel"
+    ],
+    "code": [
+      "# TODO: No auto template for rwFactory"
+    ]
+  },
+  "thrusterfactory": {
+    "class": "thrusterFactory",
+    "module": "utilities.simIncludeThruster",
+    "keywords": [
+      "thrusterfactory",
+      "thruster",
+      "thr"
+    ],
+    "code": [
+      "thr = utilities.simIncludeThruster.thrusterFactory()",
+      "sc.addDynamicEffector(thr)"
+    ]
+  },
+  "processbaseclass": {
+    "class": "ProcessBaseClass",
+    "module": "utilities.simulationArchTypes",
+    "keywords": [
+      "processbaseclass"
+    ],
+    "code": [
+      "# TODO: No auto template for ProcessBaseClass"
+    ]
+  },
+  "taskbaseclass": {
+    "class": "TaskBaseClass",
+    "module": "utilities.simulationArchTypes",
+    "keywords": [
+      "taskbaseclass"
+    ],
+    "code": [
+      "# TODO: No auto template for TaskBaseClass"
+    ]
+  },
+  "eventhandlerclass": {
+    "class": "EventHandlerClass",
+    "module": "utilities.SimulationBaseClass",
+    "keywords": [
+      "eventhandlerclass"
+    ],
+    "code": [
+      "# TODO: No auto template for EventHandlerClass"
+    ]
+  },
+  "simbaseclass": {
+    "class": "SimBaseClass",
+    "module": "utilities.SimulationBaseClass",
+    "keywords": [
+      "simbaseclass"
+    ],
+    "code": [
+      "# TODO: No auto template for SimBaseClass"
+    ]
+  },
+  "structelementdef": {
+    "class": "StructElementDef",
+    "module": "utilities.SimulationBaseClass",
+    "keywords": [
+      "orbit",
+      "kepler",
+      "structelementdef"
+    ],
+    "code": [
+      "oe = utilities.SimulationBaseClass.StructElementDef()",
+      "oe.a = 7000e3",
+      "oe.e = 0.0",
+      "oe.i = 0.0",
+      "oe.Omega = 48.2 * macros.D2R",
+      "oe.omega = 347.8 * macros.D2R",
+      "oe.f = 85.3 * macros.D2R",
+      "rN, vN = orbitalMotion.elem2rv(oe)",
+      "sc.hub.r_CN_NInit = rN",
+      "sc.hub.v_CN_NInit = vN"
+    ]
+  },
+  "simulationprogressbar": {
+    "class": "SimulationProgressBar",
+    "module": "utilities.simulationProgessBar",
+    "keywords": [
+      "simulationprogressbar"
+    ],
+    "code": [
+      "# TODO: No auto template for SimulationProgressBar"
+    ]
+  },
+  "montecarloplotter": {
+    "class": "MonteCarloPlotter",
+    "module": "utilities.MonteCarlo.AnalysisBaseClass",
+    "keywords": [
+      "montecarloplotter"
+    ],
+    "code": [
+      "# TODO: No auto template for MonteCarloPlotter"
+    ]
+  },
+  "controller": {
+    "class": "Controller",
+    "module": "utilities.MonteCarlo.Controller",
+    "keywords": [
+      "controller"
+    ],
+    "code": [
+      "# TODO: No auto template for Controller"
+    ]
+  },
+  "simulationparameters": {
+    "class": "SimulationParameters",
+    "module": "utilities.MonteCarlo.Controller",
+    "keywords": [
+      "simulationparameters"
+    ],
+    "code": [
+      "# TODO: No auto template for SimulationParameters"
+    ]
+  },
+  "simulationexecutor": {
+    "class": "SimulationExecutor",
+    "module": "utilities.MonteCarlo.Controller",
+    "keywords": [
+      "simulationexecutor"
+    ],
+    "code": [
+      "# TODO: No auto template for SimulationExecutor"
+    ]
+  },
+  "singlevariabledispersion": {
+    "class": "SingleVariableDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "singlevariabledispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for SingleVariableDispersion"
+    ]
+  },
+  "uniformdispersion": {
+    "class": "UniformDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "uniformdispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for UniformDispersion"
+    ]
+  },
+  "normaldispersion": {
+    "class": "NormalDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "normaldispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for NormalDispersion"
+    ]
+  },
+  "vectorvariabledispersion": {
+    "class": "VectorVariableDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "vectorvariabledispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for VectorVariableDispersion"
+    ]
+  },
+  "uniformvectordispersion": {
+    "class": "UniformVectorDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "uniformvectordispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for UniformVectorDispersion"
+    ]
+  },
+  "normalvectordispersion": {
+    "class": "NormalVectorDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "normalvectordispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for NormalVectorDispersion"
+    ]
+  },
+  "uniformvectorangledispersion": {
+    "class": "UniformVectorAngleDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "uniformvectorangledispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for UniformVectorAngleDispersion"
+    ]
+  },
+  "normalvectorangledispersion": {
+    "class": "NormalVectorAngleDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "normalvectorangledispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for NormalVectorAngleDispersion"
+    ]
+  },
+  "uniformeuleranglemrpdispersion": {
+    "class": "UniformEulerAngleMRPDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "uniformeuleranglemrpdispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for UniformEulerAngleMRPDispersion"
+    ]
+  },
+  "normalthrusterunitdirectionvectordispersion": {
+    "class": "NormalThrusterUnitDirectionVectorDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "thr",
+      "normalthrusterunitdirectionvectordispersion",
+      "thruster"
+    ],
+    "code": [
+      "thr = utilities.MonteCarlo.Dispersions.NormalThrusterUnitDirectionVectorDispersion()",
+      "sc.addDynamicEffector(thr)"
+    ]
+  },
+  "uniformvectorcartdispersion": {
+    "class": "UniformVectorCartDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "uniformvectorcartdispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for UniformVectorCartDispersion"
+    ]
+  },
+  "normalvectorcartdispersion": {
+    "class": "NormalVectorCartDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "normalvectorcartdispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for NormalVectorCartDispersion"
+    ]
+  },
+  "inertiatensordispersion": {
+    "class": "InertiaTensorDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "inertiatensordispersion"
+    ],
+    "code": [
+      "# TODO: No auto template for InertiaTensorDispersion"
+    ]
+  },
+  "orbitalelementdispersion": {
+    "class": "OrbitalElementDispersion",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "orbit",
+      "orbitalelementdispersion",
+      "kepler"
+    ],
+    "code": [
+      "oe = utilities.MonteCarlo.Dispersions.OrbitalElementDispersion()",
+      "oe.a = 7000e3",
+      "oe.e = 0.0",
+      "oe.i = 0.0",
+      "oe.Omega = 48.2 * macros.D2R",
+      "oe.omega = 347.8 * macros.D2R",
+      "oe.f = 85.3 * macros.D2R",
+      "rN, vN = orbitalMotion.elem2rv(oe)",
+      "sc.hub.r_CN_NInit = rN",
+      "sc.hub.v_CN_NInit = vN"
+    ]
+  },
+  "mrpdispersionperaxis": {
+    "class": "MRPDispersionPerAxis",
+    "module": "utilities.MonteCarlo.Dispersions",
+    "keywords": [
+      "mrpdispersionperaxis"
+    ],
+    "code": [
+      "# TODO: No auto template for MRPDispersionPerAxis"
+    ]
+  },
+  "variableretentionparameters": {
+    "class": "VariableRetentionParameters",
+    "module": "utilities.MonteCarlo.RetentionPolicy",
+    "keywords": [
+      "variableretentionparameters"
+    ],
+    "code": [
+      "# TODO: No auto template for VariableRetentionParameters"
+    ]
+  },
+  "messageretentionparameters": {
+    "class": "MessageRetentionParameters",
+    "module": "utilities.MonteCarlo.RetentionPolicy",
+    "keywords": [
+      "messageretentionparameters"
+    ],
+    "code": [
+      "# TODO: No auto template for MessageRetentionParameters"
+    ]
+  },
+  "retentionpolicy": {
+    "class": "RetentionPolicy",
+    "module": "utilities.MonteCarlo.RetentionPolicy",
+    "keywords": [
+      "retentionpolicy"
+    ],
+    "code": [
+      "# TODO: No auto template for RetentionPolicy"
+    ]
+  },
+  "mujocoreplayconan": {
+    "class": "MujocoReplayConan",
+    "module": "utilities.mujocoUtils.conanfile",
+    "keywords": [
+      "mujocoreplayconan"
+    ],
+    "code": [
+      "# TODO: No auto template for MujocoReplayConan"
+    ]
+  }
+}

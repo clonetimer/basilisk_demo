@@ -1,0 +1,7 @@
+st=>start:Start
+sc=>operation:Init spacecraft
+g=>operation:Add gravity
+orb=>operation:Orbit 7000km
+sim=>operation:Run simulation
+e=>end:End
+st->sc->g->orb->sim->e
