@@ -12,11 +12,10 @@ from config import DOCS_DIR, RULES_PATH
 # 0) 限定扫描路径：只扫描真正的仿真模块，而不是 messages/config
 # -----------------------------------------------
 VALID_DIRS = [
-    "architecture",
-    "ExternalModels"
     "simulation",
     "fswAlgorithms",
     "utilities",
+    "codeSamples"
     "dynamics",
     "sensors",
     "effector"

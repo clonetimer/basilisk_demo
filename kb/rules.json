@@ -1,7 +1,7 @@
 {
   "_swignondynamicmeta": {
     "class": "_SwigNonDynamicMeta",
-    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "module": "simulation.vscmgStateEffector",
     "keywords": [
       "_swignondynamicmeta"
     ],
@@ -11,7 +11,7 @@
   },
   "swigpyiterator": {
     "class": "SwigPyIterator",
-    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "module": "simulation.vscmgStateEffector",
     "keywords": [
       "swigpyiterator"
     ],
@@ -21,7 +21,7 @@
   },
   "basiliskerror": {
     "class": "BasiliskError",
-    "module": "architecture.sysModel",
+    "module": "simulation.vscmgStateEffector",
     "keywords": [
       "basiliskerror"
     ],
@@ -31,7 +31,7 @@
   },
   "bsklogger": {
     "class": "BSKLogger",
-    "module": "architecture.sysModel",
+    "module": "simulation.vscmgStateEffector",
     "keywords": [
       "bsklogger"
     ],
@@ -41,7 +41,7 @@
   },
   "sysmodel": {
     "class": "SysModel",
-    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "module": "simulation.vscmgStateEffector",
     "keywords": [
       "sysmodel"
     ],
@@ -49,53 +49,861 @@
       "# TODO: No auto template for SysModel"
     ]
   },
-  "algcontain": {
-    "class": "AlgContain",
-    "module": "architecture.alg_contain",
+  "albedo": {
+    "class": "Albedo",
+    "module": "simulation.albedo",
     "keywords": [
-      "algcontain"
+      "albedo"
     ],
     "code": [
-      "# TODO: No auto template for AlgContain"
+      "# TODO: No auto template for Albedo"
     ]
   },
-  "eigen3dvector": {
-    "class": "Eigen3dVector",
-    "module": "architecture.bskUtilities",
+  "boreangcalc": {
+    "class": "BoreAngCalc",
+    "module": "simulation.boreAngCalc",
     "keywords": [
-      "eigen3dvector"
+      "boreangcalc"
     ],
     "code": [
-      "# TODO: No auto template for Eigen3dVector"
+      "# TODO: No auto template for BoreAngCalc"
     ]
   },
-  "keplerianorbit": {
-    "class": "KeplerianOrbit",
-    "module": "architecture.keplerianOrbit",
+  "coarsesunsensor": {
+    "class": "CoarseSunSensor",
+    "module": "simulation.coarseSunSensor",
     "keywords": [
-      "keplerianorbit",
-      "orbit",
-      "kepler"
+      "fss",
+      "sensor",
+      "css",
+      "coarsesunsensor"
     ],
     "code": [
-      "oe = architecture.keplerianOrbit.KeplerianOrbit()",
-      "oe.a = 7000e3",
-      "oe.e = 0.0",
-      "oe.i = 0.0",
-      "oe.Omega = 48.2 * macros.D2R",
-      "oe.omega = 347.8 * macros.D2R",
-      "oe.f = 85.3 * macros.D2R",
-      "rN, vN = orbitalMotion.elem2rv(oe)",
-      "sc.hub.r_CN_NInit = rN",
-      "sc.hub.v_CN_NInit = vN"
+      "sens = simulation.coarseSunSensor.CoarseSunSensor()",
+      "scObject.addSensor(sens)"
+    ]
+  },
+  "cssconstellation": {
+    "class": "CSSConstellation",
+    "module": "simulation.coarseSunSensor",
+    "keywords": [
+      "cssconstellation"
+    ],
+    "code": [
+      "# TODO: No auto template for CSSConstellation"
+    ]
+  },
+  "cssvector": {
+    "class": "CSSVector",
+    "module": "simulation.coarseSunSensor",
+    "keywords": [
+      "cssvector"
+    ],
+    "code": [
+      "# TODO: No auto template for CSSVector"
+    ]
+  },
+  "statevector": {
+    "class": "StateVector",
+    "module": "simulation.vscmgStateEffector",
+    "keywords": [
+      "statevector"
+    ],
+    "code": [
+      "# TODO: No auto template for StateVector"
+    ]
+  },
+  "dynparammanager": {
+    "class": "DynParamManager",
+    "module": "simulation.vscmgStateEffector",
+    "keywords": [
+      "dynparammanager"
+    ],
+    "code": [
+      "# TODO: No auto template for DynParamManager"
+    ]
+  },
+  "dynamiceffector": {
+    "class": "DynamicEffector",
+    "module": "simulation.vscmgStateEffector",
+    "keywords": [
+      "dynamiceffector",
+      "thr",
+      "thruster"
+    ],
+    "code": [
+      "thr = simulation.vscmgStateEffector.DynamicEffector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "parentid": {
+    "class": "parentID",
+    "module": "simulation.constraintDynamicEffector",
+    "keywords": [
+      "parentid"
+    ],
+    "code": [
+      "# TODO: No auto template for parentID"
+    ]
+  },
+  "constraintdynamiceffector": {
+    "class": "ConstraintDynamicEffector",
+    "module": "simulation.constraintDynamicEffector",
+    "keywords": [
+      "constraintdynamiceffector",
+      "thruster",
+      "thr"
+    ],
+    "code": [
+      "thr = simulation.constraintDynamicEffector.ConstraintDynamicEffector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "thrclustermap": {
+    "class": "ThrClusterMap",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "thrclustermap"
+    ],
+    "code": [
+      "# TODO: No auto template for ThrClusterMap"
+    ]
+  },
+  "pointline": {
+    "class": "PointLine",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "pointline"
+    ],
+    "code": [
+      "# TODO: No auto template for PointLine"
+    ]
+  },
+  "keepoutincone": {
+    "class": "KeepOutInCone",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "keepoutincone"
+    ],
+    "code": [
+      "# TODO: No auto template for KeepOutInCone"
+    ]
+  },
+  "stdcamerasettings": {
+    "class": "StdCameraSettings",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "stdcamerasettings"
+    ],
+    "code": [
+      "# TODO: No auto template for StdCameraSettings"
+    ]
+  },
+  "actuatorguisettings": {
+    "class": "ActuatorGuiSettings",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "actuatorguisettings"
+    ],
+    "code": [
+      "# TODO: No auto template for ActuatorGuiSettings"
+    ]
+  },
+  "instrumentguisettings": {
+    "class": "InstrumentGuiSettings",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "instrumentguisettings"
+    ],
+    "code": [
+      "# TODO: No auto template for InstrumentGuiSettings"
+    ]
+  },
+  "custommodel": {
+    "class": "CustomModel",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "custommodel"
+    ],
+    "code": [
+      "# TODO: No auto template for CustomModel"
+    ]
+  },
+  "genericsensor": {
+    "class": "GenericSensor",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "fss",
+      "genericsensor",
+      "css",
+      "sensor"
+    ],
+    "code": [
+      "sens = simulation.vizInterface.GenericSensor()",
+      "scObject.addSensor(sens)"
+    ]
+  },
+  "ellipsoid": {
+    "class": "Ellipsoid",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "ellipsoid"
+    ],
+    "code": [
+      "# TODO: No auto template for Ellipsoid"
+    ]
+  },
+  "quadmap": {
+    "class": "QuadMap",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "quadmap"
+    ],
+    "code": [
+      "# TODO: No auto template for QuadMap"
+    ]
+  },
+  "light": {
+    "class": "Light",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "light"
+    ],
+    "code": [
+      "# TODO: No auto template for Light"
+    ]
+  },
+  "multishape": {
+    "class": "MultiShape",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "multishape"
+    ],
+    "code": [
+      "# TODO: No auto template for MultiShape"
+    ]
+  },
+  "multishapeinfo": {
+    "class": "MultiShapeInfo",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "multishapeinfo"
+    ],
+    "code": [
+      "# TODO: No auto template for MultiShapeInfo"
+    ]
+  },
+  "genericstorage": {
+    "class": "GenericStorage",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "genericstorage"
+    ],
+    "code": [
+      "# TODO: No auto template for GenericStorage"
+    ]
+  },
+  "transceiver": {
+    "class": "Transceiver",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "transceiver"
+    ],
+    "code": [
+      "# TODO: No auto template for Transceiver"
+    ]
+  },
+  "vizsettings": {
+    "class": "VizSettings",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "vizsettings"
+    ],
+    "code": [
+      "# TODO: No auto template for VizSettings"
+    ]
+  },
+  "livevizsettings": {
+    "class": "LiveVizSettings",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "livevizsettings"
+    ],
+    "code": [
+      "# TODO: No auto template for LiveVizSettings"
+    ]
+  },
+  "vizeventdialog": {
+    "class": "VizEventDialog",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "vizeventdialog"
+    ],
+    "code": [
+      "# TODO: No auto template for VizEventDialog"
+    ]
+  },
+  "gravbodyinfo": {
+    "class": "GravBodyInfo",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "gravity",
+      "earth gravity",
+      "gravbodyinfo"
+    ],
+    "code": [
+      "# TODO: No auto template for GravBodyInfo"
+    ]
+  },
+  "thrclustermapvectorvector": {
+    "class": "ThrClusterMapVectorVector",
+    "module": "simulation.dataFileToViz",
+    "keywords": [
+      "thrclustermapvectorvector"
+    ],
+    "code": [
+      "# TODO: No auto template for ThrClusterMapVectorVector"
+    ]
+  },
+  "dentonfluxmodel": {
+    "class": "DentonFluxModel",
+    "module": "simulation.dentonFluxModel",
+    "keywords": [
+      "dentonfluxmodel"
+    ],
+    "code": [
+      "# TODO: No auto template for DentonFluxModel"
+    ]
+  },
+  "dragdynamiceffector": {
+    "class": "DragDynamicEffector",
+    "module": "simulation.dragDynamicEffector",
+    "keywords": [
+      "thruster",
+      "thr",
+      "dragdynamiceffector"
+    ],
+    "code": [
+      "thr = simulation.dragDynamicEffector.DragDynamicEffector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "backsubmatrices": {
+    "class": "BackSubMatrices",
+    "module": "simulation.vscmgStateEffector",
+    "keywords": [
+      "backsubmatrices"
+    ],
+    "code": [
+      "# TODO: No auto template for BackSubMatrices"
+    ]
+  },
+  "effectormassprops": {
+    "class": "EffectorMassProps",
+    "module": "simulation.vscmgStateEffector",
+    "keywords": [
+      "effectormassprops"
+    ],
+    "code": [
+      "# TODO: No auto template for EffectorMassProps"
+    ]
+  },
+  "stateeffector": {
+    "class": "StateEffector",
+    "module": "simulation.vscmgStateEffector",
+    "keywords": [
+      "stateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for StateEffector"
+    ]
+  },
+  "dualhingedrigidbodystateeffector": {
+    "class": "DualHingedRigidBodyStateEffector",
+    "module": "simulation.dualHingedRigidBodyStateEffector",
+    "keywords": [
+      "dualhingedrigidbodystateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for DualHingedRigidBodyStateEffector"
+    ]
+  },
+  "eclipse": {
+    "class": "Eclipse",
+    "module": "simulation.eclipse",
+    "keywords": [
+      "eclipse"
+    ],
+    "code": [
+      "# TODO: No auto template for Eclipse"
+    ]
+  },
+  "encoder": {
+    "class": "Encoder",
+    "module": "simulation.encoder",
+    "keywords": [
+      "encoder"
+    ],
+    "code": [
+      "# TODO: No auto template for Encoder"
+    ]
+  },
+  "ephemerisconverter": {
+    "class": "EphemerisConverter",
+    "module": "simulation.ephemerisConverter",
+    "keywords": [
+      "ephemerisconverter"
+    ],
+    "code": [
+      "# TODO: No auto template for EphemerisConverter"
+    ]
+  },
+  "atmospherebase": {
+    "class": "AtmosphereBase",
+    "module": "simulation.tabularAtmosphere",
+    "keywords": [
+      "atmospherebase"
+    ],
+    "code": [
+      "# TODO: No auto template for AtmosphereBase"
+    ]
+  },
+  "exponentialatmosphere": {
+    "class": "ExponentialAtmosphere",
+    "module": "simulation.exponentialAtmosphere",
+    "keywords": [
+      "exponentialatmosphere"
+    ],
+    "code": [
+      "# TODO: No auto template for ExponentialAtmosphere"
+    ]
+  },
+  "extforcetorque": {
+    "class": "ExtForceTorque",
+    "module": "simulation.extForceTorque",
+    "keywords": [
+      "extforcetorque"
+    ],
+    "code": [
+      "# TODO: No auto template for ExtForceTorque"
+    ]
+  },
+  "extpulsedtorque": {
+    "class": "ExtPulsedTorque",
+    "module": "simulation.ExtPulsedTorque",
+    "keywords": [
+      "extpulsedtorque"
+    ],
+    "code": [
+      "# TODO: No auto template for ExtPulsedTorque"
+    ]
+  },
+  "facetdragdynamiceffector": {
+    "class": "FacetDragDynamicEffector",
+    "module": "simulation.facetDragDynamicEffector",
+    "keywords": [
+      "facetdragdynamiceffector",
+      "thruster",
+      "thr"
+    ],
+    "code": [
+      "thr = simulation.facetDragDynamicEffector.FacetDragDynamicEffector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "facetsrpdynamiceffector": {
+    "class": "FacetSRPDynamicEffector",
+    "module": "simulation.facetSRPDynamicEffector",
+    "keywords": [
+      "thruster",
+      "facetsrpdynamiceffector",
+      "thr"
+    ],
+    "code": [
+      "thr = simulation.facetSRPDynamicEffector.FacetSRPDynamicEffector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "fueltankmodel": {
+    "class": "FuelTankModel",
+    "module": "simulation.fuelTank",
+    "keywords": [
+      "fueltankmodel"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelTankModel"
+    ]
+  },
+  "fueltankmodelconstantvolume": {
+    "class": "FuelTankModelConstantVolume",
+    "module": "simulation.fuelTank",
+    "keywords": [
+      "fueltankmodelconstantvolume"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelTankModelConstantVolume"
+    ]
+  },
+  "fueltankmodelconstantdensity": {
+    "class": "FuelTankModelConstantDensity",
+    "module": "simulation.fuelTank",
+    "keywords": [
+      "fueltankmodelconstantdensity"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelTankModelConstantDensity"
+    ]
+  },
+  "fueltankmodelemptying": {
+    "class": "FuelTankModelEmptying",
+    "module": "simulation.fuelTank",
+    "keywords": [
+      "fueltankmodelemptying"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelTankModelEmptying"
+    ]
+  },
+  "fueltankmodeluniformburn": {
+    "class": "FuelTankModelUniformBurn",
+    "module": "simulation.fuelTank",
+    "keywords": [
+      "fueltankmodeluniformburn"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelTankModelUniformBurn"
+    ]
+  },
+  "fueltankmodelcentrifugalburn": {
+    "class": "FuelTankModelCentrifugalBurn",
+    "module": "simulation.fuelTank",
+    "keywords": [
+      "fueltankmodelcentrifugalburn"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelTankModelCentrifugalBurn"
+    ]
+  },
+  "fueltank": {
+    "class": "FuelTank",
+    "module": "simulation.fuelTank",
+    "keywords": [
+      "fueltank"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelTank"
+    ]
+  },
+  "gravbodyvector": {
+    "class": "GravBodyVector",
+    "module": "simulation.gravityEffector",
+    "keywords": [
+      "gravity",
+      "earth gravity",
+      "gravbodyvector"
+    ],
+    "code": [
+      "# TODO: No auto template for GravBodyVector"
+    ]
+  },
+  "gravityeffector": {
+    "class": "GravityEffector",
+    "module": "simulation.gravityEffector",
+    "keywords": [
+      "gravityeffector",
+      "earth gravity",
+      "gravity"
+    ],
+    "code": [
+      "# TODO: No auto template for GravityEffector"
+    ]
+  },
+  "gravitygradienteffector": {
+    "class": "GravityGradientEffector",
+    "module": "simulation.GravityGradientEffector",
+    "keywords": [
+      "gravity",
+      "earth gravity",
+      "gravitygradienteffector"
+    ],
+    "code": [
+      "# TODO: No auto template for GravityGradientEffector"
+    ]
+  },
+  "gravitymodel": {
+    "class": "GravityModel",
+    "module": "simulation.gravityModel",
+    "keywords": [
+      "gravity",
+      "earth gravity",
+      "gravitymodel"
+    ],
+    "code": [
+      "# TODO: No auto template for GravityModel"
+    ]
+  },
+  "groundlocation": {
+    "class": "GroundLocation",
+    "module": "simulation.groundLocation",
+    "keywords": [
+      "groundlocation"
+    ],
+    "code": [
+      "# TODO: No auto template for GroundLocation"
+    ]
+  },
+  "groundmapping": {
+    "class": "GroundMapping",
+    "module": "simulation.groundMapping",
+    "keywords": [
+      "groundmapping"
+    ],
+    "code": [
+      "# TODO: No auto template for GroundMapping"
+    ]
+  },
+  "hingedbodylinearprofiler": {
+    "class": "HingedBodyLinearProfiler",
+    "module": "simulation.hingedBodyLinearProfiler",
+    "keywords": [
+      "hingedbodylinearprofiler"
+    ],
+    "code": [
+      "# TODO: No auto template for HingedBodyLinearProfiler"
+    ]
+  },
+  "hingedrigidbodymotor": {
+    "class": "HingedRigidBodyMotor",
+    "module": "simulation.hingedRigidBodyMotor",
+    "keywords": [
+      "hingedrigidbodymotor"
+    ],
+    "code": [
+      "# TODO: No auto template for HingedRigidBodyMotor"
+    ]
+  },
+  "hingedrigidbodymotorsensor": {
+    "class": "HingedRigidBodyMotorSensor",
+    "module": "simulation.hingedRigidBodyMotorSensor",
+    "keywords": [
+      "fss",
+      "css",
+      "sensor",
+      "hingedrigidbodymotorsensor"
+    ],
+    "code": [
+      "sens = simulation.hingedRigidBodyMotorSensor.HingedRigidBodyMotorSensor()",
+      "scObject.addSensor(sens)"
+    ]
+  },
+  "hingedrigidbodystateeffector": {
+    "class": "HingedRigidBodyStateEffector",
+    "module": "simulation.hingedRigidBodyStateEffector",
+    "keywords": [
+      "hingedrigidbodystateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for HingedRigidBodyStateEffector"
+    ]
+  },
+  "imusensor": {
+    "class": "ImuSensor",
+    "module": "simulation.imuSensor",
+    "keywords": [
+      "fss",
+      "css",
+      "sensor",
+      "imusensor"
+    ],
+    "code": [
+      "sens = simulation.imuSensor.ImuSensor()",
+      "scObject.addSensor(sens)"
+    ]
+  },
+  "fuelslosh": {
+    "class": "FuelSlosh",
+    "module": "simulation.sphericalPendulum",
+    "keywords": [
+      "fuelslosh"
+    ],
+    "code": [
+      "# TODO: No auto template for FuelSlosh"
+    ]
+  },
+  "linearspringmassdamper": {
+    "class": "LinearSpringMassDamper",
+    "module": "simulation.linearSpringMassDamper",
+    "keywords": [
+      "linearspringmassdamper"
+    ],
+    "code": [
+      "# TODO: No auto template for LinearSpringMassDamper"
+    ]
+  },
+  "_deprecatedwrapper": {
+    "class": "_DeprecatedWrapper",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "_deprecatedwrapper"
+    ],
+    "code": [
+      "# TODO: No auto template for _DeprecatedWrapper"
+    ]
+  },
+  "translatingbody": {
+    "class": "TranslatingBody",
+    "module": "simulation.linearTranslationNDOFStateEffector",
+    "keywords": [
+      "translatingbody"
+    ],
+    "code": [
+      "# TODO: No auto template for TranslatingBody"
+    ]
+  },
+  "lineartranslationndofstateeffector": {
+    "class": "LinearTranslationNDOFStateEffector",
+    "module": "simulation.linearTranslationNDOFStateEffector",
+    "keywords": [
+      "lineartranslationndofstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for LinearTranslationNDOFStateEffector"
+    ]
+  },
+  "lineartranslationonedofstateeffector": {
+    "class": "LinearTranslationOneDOFStateEffector",
+    "module": "simulation.linearTranslationOneDOFStateEffector",
+    "keywords": [
+      "lineartranslationonedofstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for LinearTranslationOneDOFStateEffector"
+    ]
+  },
+  "magneticfieldbase": {
+    "class": "MagneticFieldBase",
+    "module": "simulation.magneticFieldWMM",
+    "keywords": [
+      "mag field",
+      "magnetic",
+      "magneticfieldbase"
+    ],
+    "code": [
+      "# TODO: No auto template for MagneticFieldBase"
+    ]
+  },
+  "magneticfieldcentereddipole": {
+    "class": "MagneticFieldCenteredDipole",
+    "module": "simulation.magneticFieldCenteredDipole",
+    "keywords": [
+      "magneticfieldcentereddipole",
+      "magnetic",
+      "mag field"
+    ],
+    "code": [
+      "# TODO: No auto template for MagneticFieldCenteredDipole"
+    ]
+  },
+  "magneticfieldwmm": {
+    "class": "MagneticFieldWMM",
+    "module": "simulation.magneticFieldWMM",
+    "keywords": [
+      "mag field",
+      "magnetic",
+      "magneticfieldwmm"
+    ],
+    "code": [
+      "# TODO: No auto template for MagneticFieldWMM"
+    ]
+  },
+  "magnetometer": {
+    "class": "Magnetometer",
+    "module": "simulation.magnetometer",
+    "keywords": [
+      "mag field",
+      "magnetic",
+      "magnetometer"
+    ],
+    "code": [
+      "# TODO: No auto template for Magnetometer"
+    ]
+  },
+  "mappinginstrument": {
+    "class": "MappingInstrument",
+    "module": "simulation.mappingInstrument",
+    "keywords": [
+      "mappinginstrument"
+    ],
+    "code": [
+      "# TODO: No auto template for MappingInstrument"
+    ]
+  },
+  "motorthermal": {
+    "class": "MotorThermal",
+    "module": "simulation.motorThermal",
+    "keywords": [
+      "motorthermal"
+    ],
+    "code": [
+      "# TODO: No auto template for MotorThermal"
+    ]
+  },
+  "msisatmosphere": {
+    "class": "MsisAtmosphere",
+    "module": "simulation.msisAtmosphere",
+    "keywords": [
+      "msisatmosphere"
+    ],
+    "code": [
+      "# TODO: No auto template for MsisAtmosphere"
+    ]
+  },
+  "msmforcetorque": {
+    "class": "MsmForceTorque",
+    "module": "simulation.msmForceTorque",
+    "keywords": [
+      "msmforcetorque"
+    ],
+    "code": [
+      "# TODO: No auto template for MsmForceTorque"
+    ]
+  },
+  "mtbeffector": {
+    "class": "MtbEffector",
+    "module": "simulation.MtbEffector",
+    "keywords": [
+      "mtbeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for MtbEffector"
+    ]
+  },
+  "hingedpanel": {
+    "class": "HingedPanel",
+    "module": "simulation.nHingedRigidBodyStateEffector",
+    "keywords": [
+      "hingedpanel"
+    ],
+    "code": [
+      "# TODO: No auto template for HingedPanel"
+    ]
+  },
+  "nhingedrigidbodystateeffector": {
+    "class": "NHingedRigidBodyStateEffector",
+    "module": "simulation.nHingedRigidBodyStateEffector",
+    "keywords": [
+      "nhingedrigidbodystateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for NHingedRigidBodyStateEffector"
     ]
   },
   "classicelements": {
     "class": "ClassicElements",
     "module": "utilities.orbitalMotion",
     "keywords": [
-      "orbit",
       "kepler",
+      "orbit",
       "classicelements"
     ],
     "code": [
@@ -106,18 +914,19 @@
       "oe.Omega = 48.2 * macros.D2R",
       "oe.omega = 347.8 * macros.D2R",
       "oe.f = 85.3 * macros.D2R",
-      "rN, vN = orbitalMotion.elem2rv(oe)",
-      "sc.hub.r_CN_NInit = rN",
-      "sc.hub.v_CN_NInit = vN"
+      "rN, vN = orbitalMotion.elem2rv(mu, oe)",
+      "oe = orbitalMotion.rv2elem(mu, rN, vN)",
+      "scObject.hub.r_CN_NInit = rN",
+      "scObject.hub.v_CN_NInit = vN"
     ]
   },
   "equinoctialelements": {
     "class": "EquinoctialElements",
     "module": "utilities.orbitalMotion",
     "keywords": [
+      "kepler",
       "equinoctialelements",
-      "orbit",
-      "kepler"
+      "orbit"
     ],
     "code": [
       "oe = utilities.orbitalMotion.EquinoctialElements()",
@@ -127,24 +936,25 @@
       "oe.Omega = 48.2 * macros.D2R",
       "oe.omega = 347.8 * macros.D2R",
       "oe.f = 85.3 * macros.D2R",
-      "rN, vN = orbitalMotion.elem2rv(oe)",
-      "sc.hub.r_CN_NInit = rN",
-      "sc.hub.v_CN_NInit = vN"
+      "rN, vN = orbitalMotion.elem2rv(mu, oe)",
+      "oe = orbitalMotion.rv2elem(mu, rN, vN)",
+      "scObject.hub.r_CN_NInit = rN",
+      "scObject.hub.v_CN_NInit = vN"
     ]
   },
-  "moduleidgenerator": {
-    "class": "ModuleIdGenerator",
-    "module": "architecture.moduleIdGenerator",
+  "orbelemconvert": {
+    "class": "OrbElemConvert",
+    "module": "simulation.orbElemConvert",
     "keywords": [
-      "moduleidgenerator"
+      "orbelemconvert"
     ],
     "code": [
-      "# TODO: No auto template for ModuleIdGenerator"
+      "# TODO: No auto template for OrbElemConvert"
     ]
   },
   "intvector": {
     "class": "IntVector",
-    "module": "architecture.sys_model_task",
+    "module": "simulation.THRSimConfig",
     "keywords": [
       "intvector"
     ],
@@ -154,7 +964,7 @@
   },
   "doublevector": {
     "class": "DoubleVector",
-    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "module": "simulation.THRSimConfig",
     "keywords": [
       "doublevector"
     ],
@@ -162,19 +972,9 @@
       "# TODO: No auto template for DoubleVector"
     ]
   },
-  "multiarray": {
-    "class": "MultiArray",
-    "module": "architecture.swig_common_model",
-    "keywords": [
-      "multiarray"
-    ],
-    "code": [
-      "# TODO: No auto template for MultiArray"
-    ]
-  },
   "stringvector": {
     "class": "StringVector",
-    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+    "module": "simulation.THRSimConfig",
     "keywords": [
       "stringvector"
     ],
@@ -184,7 +984,7 @@
   },
   "stringset": {
     "class": "StringSet",
-    "module": "architecture.swig_common_model",
+    "module": "simulation.THRSimConfig",
     "keywords": [
       "stringset"
     ],
@@ -194,7 +994,7 @@
   },
   "intset": {
     "class": "intSet",
-    "module": "architecture.swig_common_model",
+    "module": "simulation.THRSimConfig",
     "keywords": [
       "intset"
     ],
@@ -202,19 +1002,9 @@
       "# TODO: No auto template for intSet"
     ]
   },
-  "int64set": {
-    "class": "int64Set",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "int64set"
-    ],
-    "code": [
-      "# TODO: No auto template for int64Set"
-    ]
-  },
   "constcharvector": {
     "class": "ConstCharVector",
-    "module": "architecture.sys_model_task",
+    "module": "simulation.THRSimConfig",
     "keywords": [
       "constcharvector"
     ],
@@ -222,149 +1012,19 @@
       "# TODO: No auto template for ConstCharVector"
     ]
   },
-  "exchangeset": {
-    "class": "exchangeSet",
-    "module": "architecture.sim_model",
+  "multiarray": {
+    "class": "MultiArray",
+    "module": "simulation.THRSimConfig",
     "keywords": [
-      "exchangeset"
+      "multiarray"
     ],
     "code": [
-      "# TODO: No auto template for exchangeSet"
-    ]
-  },
-  "modelpripair": {
-    "class": "modelPriPair",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "modelpripair"
-    ],
-    "code": [
-      "# TODO: No auto template for modelPriPair"
-    ]
-  },
-  "procschedlist": {
-    "class": "procSchedList",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "procschedlist"
-    ],
-    "code": [
-      "# TODO: No auto template for procSchedList"
-    ]
-  },
-  "simproclist": {
-    "class": "simProcList",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "simproclist"
-    ],
-    "code": [
-      "# TODO: No auto template for simProcList"
-    ]
-  },
-  "modelprioritypair": {
-    "class": "ModelPriorityPair",
-    "module": "architecture.sys_model_task",
-    "keywords": [
-      "modelprioritypair"
-    ],
-    "code": [
-      "# TODO: No auto template for ModelPriorityPair"
-    ]
-  },
-  "sysmodeltask": {
-    "class": "SysModelTask",
-    "module": "architecture.sys_model_task",
-    "keywords": [
-      "sysmodeltask"
-    ],
-    "code": [
-      "# TODO: No auto template for SysModelTask"
-    ]
-  },
-  "modelscheduleentry": {
-    "class": "ModelScheduleEntry",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "modelscheduleentry"
-    ],
-    "code": [
-      "# TODO: No auto template for ModelScheduleEntry"
-    ]
-  },
-  "sysprocess": {
-    "class": "SysProcess",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "sysprocess"
-    ],
-    "code": [
-      "# TODO: No auto template for SysProcess"
-    ]
-  },
-  "simthreadexecution": {
-    "class": "SimThreadExecution",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "simthreadexecution"
-    ],
-    "code": [
-      "# TODO: No auto template for SimThreadExecution"
-    ]
-  },
-  "simmodel": {
-    "class": "SimModel",
-    "module": "architecture.sim_model",
-    "keywords": [
-      "simmodel"
-    ],
-    "code": [
-      "# TODO: No auto template for SimModel"
-    ]
-  },
-  "_deprecatedwrapper": {
-    "class": "_DeprecatedWrapper",
-    "module": "architecture.swig_deprecated",
-    "keywords": [
-      "_deprecatedwrapper"
-    ],
-    "code": [
-      "# TODO: No auto template for _DeprecatedWrapper"
-    ]
-  },
-  "swigdeprecatedtestclass": {
-    "class": "SwigDeprecatedTestClass",
-    "module": "architecture.swigDeprecatedCheck",
-    "keywords": [
-      "swigdeprecatedtestclass"
-    ],
-    "code": [
-      "# TODO: No auto template for SwigDeprecatedTestClass"
-    ]
-  },
-  "intarray3": {
-    "class": "IntArray3",
-    "module": "architecture.swigEigenCheck",
-    "keywords": [
-      "intarray3"
-    ],
-    "code": [
-      "# TODO: No auto template for IntArray3"
-    ]
-  },
-  "swigeigentestclass": {
-    "class": "SwigEigenTestClass",
-    "module": "architecture.swigEigenCheck",
-    "keywords": [
-      "swigeigentestclass"
-    ],
-    "code": [
-      "# TODO: No auto template for SwigEigenTestClass"
+      "# TODO: No auto template for MultiArray"
     ]
   },
   "multiarray3d": {
     "class": "MultiArray3d",
-    "module": "architecture.swig_common_model",
+    "module": "simulation.THRSimConfig",
     "keywords": [
       "multiarray3d"
     ],
@@ -372,44 +1032,931 @@
       "# TODO: No auto template for MultiArray3d"
     ]
   },
-  "_sysmodel": {
-    "class": "_SysModel",
-    "module": "architecture.sysModel",
+  "partitionedstorageunit": {
+    "class": "PartitionedStorageUnit",
+    "module": "simulation.partitionedStorageUnit",
     "keywords": [
-      "_sysmodel"
+      "partitionedstorageunit"
     ],
     "code": [
-      "# TODO: No auto template for _SysModel"
+      "# TODO: No auto template for PartitionedStorageUnit"
     ]
   },
-  "superinitchecker": {
-    "class": "SuperInitChecker",
-    "module": "architecture.sysModel",
+  "pinholecamera": {
+    "class": "PinholeCamera",
+    "module": "simulation.pinholeCamera",
     "keywords": [
-      "superinitchecker"
+      "pinholecamera"
     ],
     "code": [
-      "# TODO: No auto template for SuperInitChecker"
+      "# TODO: No auto template for PinholeCamera"
     ]
   },
-  "timevector": {
-    "class": "TimeVector",
-    "module": "architecture.messaging.VSCMGSpeedMsgPayload",
+  "classicelementvector": {
+    "class": "classicElementVector",
+    "module": "simulation.planetEphemeris",
     "keywords": [
-      "timevector"
+      "classicelementvector",
+      "kepler",
+      "orbit"
     ],
     "code": [
-      "# TODO: No auto template for TimeVector"
+      "oe = simulation.planetEphemeris.classicElementVector()",
+      "oe.a = 7000e3",
+      "oe.e = 0.0",
+      "oe.i = 0.0",
+      "oe.Omega = 48.2 * macros.D2R",
+      "oe.omega = 347.8 * macros.D2R",
+      "oe.f = 85.3 * macros.D2R",
+      "rN, vN = orbitalMotion.elem2rv(mu, oe)",
+      "oe = orbitalMotion.rv2elem(mu, rN, vN)",
+      "scObject.hub.r_CN_NInit = rN",
+      "scObject.hub.v_CN_NInit = vN"
+    ]
+  },
+  "planetephemeris": {
+    "class": "PlanetEphemeris",
+    "module": "simulation.planetEphemeris",
+    "keywords": [
+      "planetephemeris"
+    ],
+    "code": [
+      "# TODO: No auto template for PlanetEphemeris"
+    ]
+  },
+  "planetheading": {
+    "class": "PlanetHeading",
+    "module": "simulation.planetHeading",
+    "keywords": [
+      "planetheading"
+    ],
+    "code": [
+      "# TODO: No auto template for PlanetHeading"
+    ]
+  },
+  "planetnav": {
+    "class": "PlanetNav",
+    "module": "simulation.planetNav",
+    "keywords": [
+      "simplenav",
+      "nav",
+      "planetnav",
+      "navigation"
+    ],
+    "code": [
+      "nav = simulation.planetNav.PlanetNav()",
+      "scSim.AddModelToTask(simTaskName, nav)"
+    ]
+  },
+  "pointmassgravitymodel": {
+    "class": "PointMassGravityModel",
+    "module": "simulation.pointMassGravityModel",
+    "keywords": [
+      "gravity",
+      "pointmassgravitymodel",
+      "earth gravity"
+    ],
+    "code": [
+      "# TODO: No auto template for PointMassGravityModel"
+    ]
+  },
+  "polyhedralgravitymodel": {
+    "class": "PolyhedralGravityModel",
+    "module": "simulation.polyhedralGravityModel",
+    "keywords": [
+      "gravity",
+      "earth gravity",
+      "polyhedralgravitymodel"
+    ],
+    "code": [
+      "# TODO: No auto template for PolyhedralGravityModel"
+    ]
+  },
+  "prescribedlineartranslation": {
+    "class": "PrescribedLinearTranslation",
+    "module": "simulation.prescribedLinearTranslation",
+    "keywords": [
+      "prescribedlineartranslation"
+    ],
+    "code": [
+      "# TODO: No auto template for PrescribedLinearTranslation"
+    ]
+  },
+  "prescribedmotionstateeffector": {
+    "class": "PrescribedMotionStateEffector",
+    "module": "simulation.prescribedMotionStateEffector",
+    "keywords": [
+      "prescribedmotionstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for PrescribedMotionStateEffector"
+    ]
+  },
+  "prescribedrotation1dof": {
+    "class": "PrescribedRotation1DOF",
+    "module": "simulation.prescribedRotation1DOF",
+    "keywords": [
+      "prescribedrotation1dof"
+    ],
+    "code": [
+      "# TODO: No auto template for PrescribedRotation1DOF"
+    ]
+  },
+  "radiationpressure": {
+    "class": "RadiationPressure",
+    "module": "simulation.radiationPressure",
+    "keywords": [
+      "radiationpressure",
+      "solar radiation",
+      "srp"
+    ],
+    "code": [
+      "# TODO: No auto template for RadiationPressure"
+    ]
+  },
+  "srplookuptablehandler": {
+    "class": "SRPLookupTableHandler",
+    "module": "simulation.radiationPressure",
+    "keywords": [
+      "srplookuptablehandler"
+    ],
+    "code": [
+      "# TODO: No auto template for SRPLookupTableHandler"
+    ]
+  },
+  "powernodebase": {
+    "class": "PowerNodeBase",
+    "module": "simulation.simpleSolarPanel",
+    "keywords": [
+      "powernodebase"
+    ],
+    "code": [
+      "# TODO: No auto template for PowerNodeBase"
+    ]
+  },
+  "reactionwheelpower": {
+    "class": "ReactionWheelPower",
+    "module": "simulation.ReactionWheelPower",
+    "keywords": [
+      "reactionwheelpower"
+    ],
+    "code": [
+      "# TODO: No auto template for ReactionWheelPower"
+    ]
+  },
+  "reactionwheelstateeffector": {
+    "class": "ReactionWheelStateEffector",
+    "module": "simulation.reactionWheelStateEffector",
+    "keywords": [
+      "reactionwheelstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for ReactionWheelStateEffector"
+    ]
+  },
+  "sensorthermal": {
+    "class": "SensorThermal",
+    "module": "simulation.sensorThermal",
+    "keywords": [
+      "sensorthermal",
+      "fss",
+      "css",
+      "sensor"
+    ],
+    "code": [
+      "sens = simulation.sensorThermal.SensorThermal()",
+      "scObject.addSensor(sens)"
+    ]
+  },
+  "powerstoragebase": {
+    "class": "PowerStorageBase",
+    "module": "simulation.simplePowerMonitor",
+    "keywords": [
+      "powerstoragebase"
+    ],
+    "code": [
+      "# TODO: No auto template for PowerStorageBase"
+    ]
+  },
+  "simplebattery": {
+    "class": "SimpleBattery",
+    "module": "simulation.simpleBattery",
+    "keywords": [
+      "simplebattery"
+    ],
+    "code": [
+      "# TODO: No auto template for SimpleBattery"
+    ]
+  },
+  "simpleinstrument": {
+    "class": "SimpleInstrument",
+    "module": "simulation.simpleInstrument",
+    "keywords": [
+      "simpleinstrument"
+    ],
+    "code": [
+      "# TODO: No auto template for SimpleInstrument"
+    ]
+  },
+  "simplemassprops": {
+    "class": "SimpleMassProps",
+    "module": "simulation.simpleMassProps",
+    "keywords": [
+      "simplemassprops"
+    ],
+    "code": [
+      "# TODO: No auto template for SimpleMassProps"
+    ]
+  },
+  "simplenav": {
+    "class": "SimpleNav",
+    "module": "simulation.simpleNav",
+    "keywords": [
+      "simplenav",
+      "nav",
+      "navigation"
+    ],
+    "code": [
+      "nav = simulation.simpleNav.SimpleNav()",
+      "scSim.AddModelToTask(simTaskName, nav)"
+    ]
+  },
+  "simplepowermonitor": {
+    "class": "SimplePowerMonitor",
+    "module": "simulation.simplePowerMonitor",
+    "keywords": [
+      "simplepowermonitor"
+    ],
+    "code": [
+      "# TODO: No auto template for SimplePowerMonitor"
+    ]
+  },
+  "simplepowersink": {
+    "class": "SimplePowerSink",
+    "module": "simulation.simplePowerSink",
+    "keywords": [
+      "simplepowersink"
+    ],
+    "code": [
+      "# TODO: No auto template for SimplePowerSink"
+    ]
+  },
+  "simplesolarpanel": {
+    "class": "SimpleSolarPanel",
+    "module": "simulation.simpleSolarPanel",
+    "keywords": [
+      "simplesolarpanel"
+    ],
+    "code": [
+      "# TODO: No auto template for SimpleSolarPanel"
+    ]
+  },
+  "simplestorageunit": {
+    "class": "SimpleStorageUnit",
+    "module": "simulation.simpleStorageUnit",
+    "keywords": [
+      "simplestorageunit"
+    ],
+    "code": [
+      "# TODO: No auto template for SimpleStorageUnit"
+    ]
+  },
+  "simpletransmitter": {
+    "class": "SimpleTransmitter",
+    "module": "simulation.simpleTransmitter",
+    "keywords": [
+      "simpletransmitter"
+    ],
+    "code": [
+      "# TODO: No auto template for SimpleTransmitter"
+    ]
+  },
+  "simplevoltestimator": {
+    "class": "SimpleVoltEstimator",
+    "module": "simulation.simpleVoltEstimator",
+    "keywords": [
+      "simplevoltestimator"
+    ],
+    "code": [
+      "# TODO: No auto template for SimpleVoltEstimator"
+    ]
+  },
+  "clocksynch": {
+    "class": "ClockSynch",
+    "module": "simulation.simSynch",
+    "keywords": [
+      "clocksynch"
+    ],
+    "code": [
+      "# TODO: No auto template for ClockSynch"
+    ]
+  },
+  "solarflux": {
+    "class": "SolarFlux",
+    "module": "simulation.solarFlux",
+    "keywords": [
+      "solarflux"
+    ],
+    "code": [
+      "# TODO: No auto template for SolarFlux"
+    ]
+  },
+  "dynamicobject": {
+    "class": "DynamicObject",
+    "module": "simulation.spacecraftSystem",
+    "keywords": [
+      "dynamicobject"
+    ],
+    "code": [
+      "# TODO: No auto template for DynamicObject"
+    ]
+  },
+  "spacecraft": {
+    "class": "Spacecraft",
+    "module": "simulation.spacecraft",
+    "keywords": [
+      "init spacecraft",
+      "spacecraft"
+    ],
+    "code": [
+      "scObject = simulation.spacecraft.Spacecraft()",
+      "scSim.AddModelToTask(simTaskName, scObject)"
+    ]
+  },
+  "hubeffector": {
+    "class": "HubEffector",
+    "module": "simulation.spacecraftSystem",
+    "keywords": [
+      "hubeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for HubEffector"
+    ]
+  },
+  "spacecraftlocation": {
+    "class": "SpacecraftLocation",
+    "module": "simulation.spacecraftLocation",
+    "keywords": [
+      "init spacecraft",
+      "spacecraft",
+      "spacecraftlocation"
+    ],
+    "code": [
+      "scObject = simulation.spacecraftLocation.SpacecraftLocation()",
+      "scSim.AddModelToTask(simTaskName, scObject)"
+    ]
+  },
+  "spacecraftunit": {
+    "class": "SpacecraftUnit",
+    "module": "simulation.spacecraftSystem",
+    "keywords": [
+      "init spacecraft",
+      "spacecraftunit",
+      "spacecraft"
+    ],
+    "code": [
+      "scObject = simulation.spacecraftSystem.SpacecraftUnit()",
+      "scSim.AddModelToTask(simTaskName, scObject)"
+    ]
+  },
+  "spacecraftsystem": {
+    "class": "SpacecraftSystem",
+    "module": "simulation.spacecraftSystem",
+    "keywords": [
+      "init spacecraft",
+      "spacecraftsystem",
+      "spacecraft"
+    ],
+    "code": [
+      "scObject = simulation.spacecraftSystem.SpacecraftSystem()",
+      "scSim.AddModelToTask(simTaskName, scObject)"
+    ]
+  },
+  "spacetogroundtransmitter": {
+    "class": "SpaceToGroundTransmitter",
+    "module": "simulation.spaceToGroundTransmitter",
+    "keywords": [
+      "spacetogroundtransmitter"
+    ],
+    "code": [
+      "# TODO: No auto template for SpaceToGroundTransmitter"
+    ]
+  },
+  "sphericalharmonicsgravitymodel": {
+    "class": "SphericalHarmonicsGravityModel",
+    "module": "simulation.sphericalHarmonicsGravityModel",
+    "keywords": [
+      "gravity",
+      "sphericalharmonicsgravitymodel",
+      "earth gravity"
+    ],
+    "code": [
+      "# TODO: No auto template for SphericalHarmonicsGravityModel"
+    ]
+  },
+  "sphericalpendulum": {
+    "class": "SphericalPendulum",
+    "module": "simulation.sphericalPendulum",
+    "keywords": [
+      "sphericalpendulum"
+    ],
+    "code": [
+      "# TODO: No auto template for SphericalPendulum"
+    ]
+  },
+  "spinningbody": {
+    "class": "SpinningBody",
+    "module": "simulation.spinningBodyNDOFStateEffector",
+    "keywords": [
+      "spinningbody"
+    ],
+    "code": [
+      "# TODO: No auto template for SpinningBody"
+    ]
+  },
+  "spinningbodyndofstateeffector": {
+    "class": "SpinningBodyNDOFStateEffector",
+    "module": "simulation.spinningBodyNDOFStateEffector",
+    "keywords": [
+      "spinningbodyndofstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for SpinningBodyNDOFStateEffector"
+    ]
+  },
+  "spinningbodyonedofstateeffector": {
+    "class": "SpinningBodyOneDOFStateEffector",
+    "module": "simulation.spinningBodyOneDOFStateEffector",
+    "keywords": [
+      "spinningbodyonedofstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for SpinningBodyOneDOFStateEffector"
+    ]
+  },
+  "spinningbodytwodofstateeffector": {
+    "class": "SpinningBodyTwoDOFStateEffector",
+    "module": "simulation.spinningBodyTwoDOFStateEffector",
+    "keywords": [
+      "spinningbodytwodofstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for SpinningBodyTwoDOFStateEffector"
+    ]
+  },
+  "startracker": {
+    "class": "StarTracker",
+    "module": "simulation.starTracker",
+    "keywords": [
+      "startracker"
+    ],
+    "code": [
+      "# TODO: No auto template for StarTracker"
+    ]
+  },
+  "steppermotor": {
+    "class": "StepperMotor",
+    "module": "simulation.stepperMotor",
+    "keywords": [
+      "steppermotor"
+    ],
+    "code": [
+      "# TODO: No auto template for StepperMotor"
+    ]
+  },
+  "statevecintegrator": {
+    "class": "StateVecIntegrator",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "statevecintegrator"
+    ],
+    "code": [
+      "# TODO: No auto template for StateVecIntegrator"
+    ]
+  },
+  "svintegratorrungekutta1": {
+    "class": "svIntegratorRungeKutta1",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta1"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta1"
+    ]
+  },
+  "svintegratoradaptiverungekutta1": {
+    "class": "svIntegratorAdaptiveRungeKutta1",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta1"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta1"
+    ]
+  },
+  "svintegratorrungekutta2": {
+    "class": "svIntegratorRungeKutta2",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta2"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta2"
+    ]
+  },
+  "svintegratoradaptiverungekutta2": {
+    "class": "svIntegratorAdaptiveRungeKutta2",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta2"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta2"
+    ]
+  },
+  "svintegratorrungekutta3": {
+    "class": "svIntegratorRungeKutta3",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta3"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta3"
+    ]
+  },
+  "svintegratoradaptiverungekutta3": {
+    "class": "svIntegratorAdaptiveRungeKutta3",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta3"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta3"
+    ]
+  },
+  "svintegratorrungekutta4": {
+    "class": "svIntegratorRungeKutta4",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta4"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta4"
+    ]
+  },
+  "svintegratoradaptiverungekutta4": {
+    "class": "svIntegratorAdaptiveRungeKutta4",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta4"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta4"
+    ]
+  },
+  "svintegratorrungekutta6": {
+    "class": "svIntegratorRungeKutta6",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta6"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta6"
+    ]
+  },
+  "svintegratoradaptiverungekutta6": {
+    "class": "svIntegratorAdaptiveRungeKutta6",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta6"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta6"
+    ]
+  },
+  "svintegratorrungekutta7": {
+    "class": "svIntegratorRungeKutta7",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta7"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta7"
+    ]
+  },
+  "svintegratoradaptiverungekutta7": {
+    "class": "svIntegratorAdaptiveRungeKutta7",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta7"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta7"
+    ]
+  },
+  "svintegratorrungekutta9": {
+    "class": "svIntegratorRungeKutta9",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta9"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta9"
+    ]
+  },
+  "svintegratoradaptiverungekutta9": {
+    "class": "svIntegratorAdaptiveRungeKutta9",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta9"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta9"
+    ]
+  },
+  "svintegratorrungekutta13": {
+    "class": "svIntegratorRungeKutta13",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrungekutta13"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRungeKutta13"
+    ]
+  },
+  "svintegratoradaptiverungekutta13": {
+    "class": "svIntegratorAdaptiveRungeKutta13",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoradaptiverungekutta13"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorAdaptiveRungeKutta13"
+    ]
+  },
+  "svintegratorrk4": {
+    "class": "svIntegratorRK4",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrk4"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRK4"
+    ]
+  },
+  "svintegratoreuler": {
+    "class": "svIntegratorEuler",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratoreuler"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorEuler"
+    ]
+  },
+  "svintegratorrk2": {
+    "class": "svIntegratorRK2",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrk2"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRK2"
+    ]
+  },
+  "svintegratorrkf45": {
+    "class": "svIntegratorRKF45",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrkf45"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRKF45"
+    ]
+  },
+  "svintegratorrkf78": {
+    "class": "svIntegratorRKF78",
+    "module": "simulation.svIntegrators",
+    "keywords": [
+      "svintegratorrkf78"
+    ],
+    "code": [
+      "# TODO: No auto template for svIntegratorRKF78"
+    ]
+  },
+  "tabularatmosphere": {
+    "class": "TabularAtmosphere",
+    "module": "simulation.tabularAtmosphere",
+    "keywords": [
+      "tabularatmosphere"
+    ],
+    "code": [
+      "# TODO: No auto template for TabularAtmosphere"
+    ]
+  },
+  "tempmeasurement": {
+    "class": "TempMeasurement",
+    "module": "simulation.tempMeasurement",
+    "keywords": [
+      "tempmeasurement"
+    ],
+    "code": [
+      "# TODO: No auto template for TempMeasurement"
+    ]
+  },
+  "thrustertimevector": {
+    "class": "ThrusterTimeVector",
+    "module": "simulation.thrusterDynamicEffector",
+    "keywords": [
+      "thrustertimevector",
+      "thruster",
+      "thr"
+    ],
+    "code": [
+      "thr = simulation.thrusterDynamicEffector.ThrusterTimeVector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "thrusterdynamiceffector": {
+    "class": "ThrusterDynamicEffector",
+    "module": "simulation.thrusterDynamicEffector",
+    "keywords": [
+      "thrusterdynamiceffector",
+      "thr",
+      "thruster"
+    ],
+    "code": [
+      "thr = simulation.thrusterDynamicEffector.ThrusterDynamicEffector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "thrtimepair": {
+    "class": "THRTimePair",
+    "module": "simulation.thrusterDynamicEffector",
+    "keywords": [
+      "thrtimepair"
+    ],
+    "code": [
+      "# TODO: No auto template for THRTimePair"
+    ]
+  },
+  "thrusterstateeffector": {
+    "class": "ThrusterStateEffector",
+    "module": "simulation.thrusterStateEffector",
+    "keywords": [
+      "thrusterstateeffector",
+      "thruster",
+      "thr"
+    ],
+    "code": [
+      "thr = simulation.thrusterStateEffector.ThrusterStateEffector()",
+      "scObject.addDynamicEffector(thr)"
+    ]
+  },
+  "vizscvector": {
+    "class": "VizSCVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "vizscvector"
+    ],
+    "code": [
+      "# TODO: No auto template for VizSCVector"
+    ]
+  },
+  "thrclustervector": {
+    "class": "ThrClusterVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "thrclustervector"
+    ],
+    "code": [
+      "# TODO: No auto template for ThrClusterVector"
+    ]
+  },
+  "gravbodyinfovector": {
+    "class": "GravBodyInfoVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "gravity",
+      "earth gravity",
+      "gravbodyinfovector"
+    ],
+    "code": [
+      "# TODO: No auto template for GravBodyInfoVector"
+    ]
+  },
+  "genericsensorvector": {
+    "class": "GenericSensorVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "genericsensorvector",
+      "fss",
+      "css",
+      "sensor"
+    ],
+    "code": [
+      "sens = simulation.vizInterface.GenericSensorVector()",
+      "scObject.addSensor(sens)"
+    ]
+  },
+  "lightvector": {
+    "class": "LightVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "lightvector"
+    ],
+    "code": [
+      "# TODO: No auto template for LightVector"
+    ]
+  },
+  "transceivervector": {
+    "class": "TransceiverVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "transceivervector"
+    ],
+    "code": [
+      "# TODO: No auto template for TransceiverVector"
+    ]
+  },
+  "genericstoragevector": {
+    "class": "GenericStorageVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "genericstoragevector"
+    ],
+    "code": [
+      "# TODO: No auto template for GenericStorageVector"
+    ]
+  },
+  "multishapevector": {
+    "class": "MultiShapeVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "multishapevector"
+    ],
+    "code": [
+      "# TODO: No auto template for MultiShapeVector"
+    ]
+  },
+  "ellipsoidvector": {
+    "class": "EllipsoidVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "ellipsoidvector"
+    ],
+    "code": [
+      "# TODO: No auto template for EllipsoidVector"
+    ]
+  },
+  "quadmapvector": {
+    "class": "QuadMapVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "quadmapvector"
+    ],
+    "code": [
+      "# TODO: No auto template for QuadMapVector"
+    ]
+  },
+  "vizeventdialogvector": {
+    "class": "VizEventDialogVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "vizeventdialogvector"
+    ],
+    "code": [
+      "# TODO: No auto template for VizEventDialogVector"
+    ]
+  },
+  "vizeventreplyvector": {
+    "class": "VizEventReplyVector",
+    "module": "simulation.vizInterface",
+    "keywords": [
+      "vizeventreplyvector"
+    ],
+    "code": [
+      "# TODO: No auto template for VizEventReplyVector"
     ]
   },
   "vizeventreply": {
     "class": "VizEventReply",
-    "module": "architecture.messaging.VizUserInputMsgPayload",
+    "module": "simulation.vizInterface",
     "keywords": [
       "vizeventreply"
     ],
     "code": [
       "# TODO: No auto template for VizEventReply"
+    ]
+  },
+  "vscmgstateeffector": {
+    "class": "VSCMGStateEffector",
+    "module": "simulation.vscmgStateEffector",
+    "keywords": [
+      "vscmgstateeffector"
+    ],
+    "code": [
+      "# TODO: No auto template for VSCMGStateEffector"
     ]
   },
   "bskdeprecationwarning": {
@@ -498,9 +2045,9 @@
     "class": "gravBodyFactory",
     "module": "utilities.simIncludeGravBody",
     "keywords": [
-      "gravbodyfactory",
+      "gravity",
       "earth gravity",
-      "gravity"
+      "gravbodyfactory"
     ],
     "code": [
       "gravFactory = simIncludeGravBody.gravBodyFactory()",
@@ -514,8 +2061,8 @@
     "module": "utilities.simIncludeRW",
     "keywords": [
       "rwfactory",
-      "rw",
-      "reaction wheel"
+      "reaction wheel",
+      "rw"
     ],
     "code": [
       "# TODO: No auto template for rwFactory"
@@ -531,7 +2078,7 @@
     ],
     "code": [
       "thr = utilities.simIncludeThruster.thrusterFactory()",
-      "sc.addDynamicEffector(thr)"
+      "scObject.addDynamicEffector(thr)"
     ]
   },
   "processbaseclass": {
@@ -578,9 +2125,9 @@
     "class": "StructElementDef",
     "module": "utilities.SimulationBaseClass",
     "keywords": [
-      "orbit",
+      "structelementdef",
       "kepler",
-      "structelementdef"
+      "orbit"
     ],
     "code": [
       "oe = utilities.SimulationBaseClass.StructElementDef()",
@@ -590,9 +2137,10 @@
       "oe.Omega = 48.2 * macros.D2R",
       "oe.omega = 347.8 * macros.D2R",
       "oe.f = 85.3 * macros.D2R",
-      "rN, vN = orbitalMotion.elem2rv(oe)",
-      "sc.hub.r_CN_NInit = rN",
-      "sc.hub.v_CN_NInit = vN"
+      "rN, vN = orbitalMotion.elem2rv(mu, oe)",
+      "oe = orbitalMotion.rv2elem(mu, rN, vN)",
+      "scObject.hub.r_CN_NInit = rN",
+      "scObject.hub.v_CN_NInit = vN"
     ]
   },
   "simulationprogressbar": {
@@ -739,13 +2287,13 @@
     "class": "NormalThrusterUnitDirectionVectorDispersion",
     "module": "utilities.MonteCarlo.Dispersions",
     "keywords": [
+      "thruster",
       "thr",
-      "normalthrusterunitdirectionvectordispersion",
-      "thruster"
+      "normalthrusterunitdirectionvectordispersion"
     ],
     "code": [
       "thr = utilities.MonteCarlo.Dispersions.NormalThrusterUnitDirectionVectorDispersion()",
-      "sc.addDynamicEffector(thr)"
+      "scObject.addDynamicEffector(thr)"
     ]
   },
   "uniformvectorcartdispersion": {
@@ -782,9 +2330,9 @@
     "class": "OrbitalElementDispersion",
     "module": "utilities.MonteCarlo.Dispersions",
     "keywords": [
-      "orbit",
       "orbitalelementdispersion",
-      "kepler"
+      "kepler",
+      "orbit"
     ],
     "code": [
       "oe = utilities.MonteCarlo.Dispersions.OrbitalElementDispersion()",
@@ -794,9 +2342,10 @@
       "oe.Omega = 48.2 * macros.D2R",
       "oe.omega = 347.8 * macros.D2R",
       "oe.f = 85.3 * macros.D2R",
-      "rN, vN = orbitalMotion.elem2rv(oe)",
-      "sc.hub.r_CN_NInit = rN",
-      "sc.hub.v_CN_NInit = vN"
+      "rN, vN = orbitalMotion.elem2rv(mu, oe)",
+      "oe = orbitalMotion.rv2elem(mu, rN, vN)",
+      "scObject.hub.r_CN_NInit = rN",
+      "scObject.hub.v_CN_NInit = vN"
     ]
   },
   "mrpdispersionperaxis": {

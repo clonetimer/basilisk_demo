@@ -1,7 +1,12 @@
-st=>start:Start
-sc=>operation:Init spacecraft
-g=>operation:Add gravity
-orb=>operation:Orbit 7000km
-sim=>operation:Run simulation
-e=>end:End
-st->sc->g->orb->sim->e
+st=>start: Start
+op1=>operation: Init spacecraft
+op2=>operation: Add Earth gravity
+op3=>operation: Set circular orbit
+op4=>operation: Add reaction wheel
+op5=>operation: Add SimpleNav
+op6=>operation: Enable logging
+op7=>operation: Run simulation 200s
+op8=>operation: Plot states
+e=>end: End
+
+st->op1->op2->op3->op4->op5->op6->op7->op8->e
