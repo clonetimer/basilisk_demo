@@ -22,6 +22,9 @@ KEYWORDS_MAP = {
     "srp": ["add srp", "solar radiation"],
     "atmosphere": ["add atmosphere", "add drag", "exponential atmosphere"],
 
+    # 控制
+    "control": ["add mrp control", "mrp control"],
+
     # 执行机构
     "reactionwheel": ["add reaction wheel", "add rw", "reaction wheel", "rw"],
     "thruster": ["add thruster", "thruster set", "add thruster set"],
@@ -35,10 +38,21 @@ KEYWORDS_MAP = {
 
     # 导航
     "simplenav": ["add simplenav", "add simple nav", "add navigation"],
+    "inertialn3d": ["add inertial 3d nav", "add inertial navigation"],
+
+    # 外部扰动
+    "externaldisturbance": ["add external disturbance", "add external force torque"],
 
     # 数据记录 & 可视化
     "logging": ["enable logging", "record states", "add logger"],
     "plot": ["plot states", "plot results", "plot position"],
+
+    # 仿真时间设置
+    "simulationtime": ["set simulation time", "simulation time", "run time"],
+    "numpoints": ["set number points", "number of points", "num points"],
+
+    # 消息
+    "message": ["create message", "send message", "subscribe message"],
 
     # 仿真执行
     "run": ["run simulation", "execute simulation", "start simulation"]
@@ -71,12 +85,19 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-from Basilisk.utilities import SimulationBaseClass, macros, orbitalMotion, simIncludeGravBody, simIncludeRW, simIncludeThruster
+from Basilisk.utilities import SimulationBaseClass, macros, orbitalMotion
+from Basilisk.utilities import simIncludeGravBody, simIncludeRW, simIncludeThruster
+from Basilisk.utilities import unitTestSupport
 from Basilisk.simulation import spacecraft
 from Basilisk.simulation import radiationPressure, exponentialAtmosphere
 from Basilisk.simulation import reactionWheelStateEffector, thrusterDynamicEffector
 from Basilisk.simulation import coarseSunSensor, imuSensor, camera, tamSensor
 from Basilisk.simulation import simpleNav
+from Basilisk.fswAlgorithms import attTrackingError
+from Basilisk.fswAlgorithms import inertial3D
+from Basilisk.fswAlgorithms import mrpFeedback
+from Basilisk.simulation import extForceTorque
+from Basilisk.architecture import messaging
 """
 
 TEMPLATE_SIM_SETUP = [
@@ -91,9 +112,6 @@ TEMPLATE_SIM_SETUP = [
     "simulationTimeStep = macros.sec2nano(10.0)  # 10 s step (example)",
     "dynProcess.addTask(scSim.CreateNewTask(simTaskName, simulationTimeStep))",
     "",
-    "# Logging sampling time",
-    "samplingTime = macros.sec2nano(1.0)",
-    ""
 ]
 
 TEMPLATE_SPACECRAFT = [
@@ -168,6 +186,24 @@ TEMPLATE_ATMOSPHERE = [
     "atmoModel.atmoDamping = 0.3",
     "atmoModel.spacecraftPositionInMsg.subscribeTo(scObject.scStateOutMsg)",
     "scSim.AddModelToTask(simTaskName, atmoModel)",
+    ""
+]
+
+TEMPLATE_CONTROL = [
+    "# === Control ===",
+    "# setup the attitude tracking error evaluation module",
+    "attError = attTrackingError.attTrackingError()",
+    "attError.ModelTag = 'attErrorInertial3D'",
+    "scSim.AddModelToTask(simTaskName, attError)",
+    "",
+    "# setup the MRP Feedback control module",
+    "mrpControl = mrpFeedback.mrpFeedback()",
+    "mrpControl.ModelTag = 'mrpFeedback'",
+    "scSim.AddModelToTask(simTaskName, mrpControl)",
+    "mrpControl.K = 3.5",
+    "mrpControl.Ki = -1  # make value negative to turn off integral feedback",
+    "mrpControl.P = 30.0",
+    "mrpControl.integralLimit = 2. / mrpControl.Ki * 0.1",
     ""
 ]
 
@@ -257,10 +293,50 @@ TEMPLATE_SIMPLENAV = [
     ""
 ]
 
+TEMPLATE_INERTIAL3D = [
+    "# === Inertial3D ===",
+    "inertial3DObj = inertial3D.inertial3D()",
+    "inertial3DObj.ModelTag = 'inertial3D'",
+    "scSim.AddModelToTask(simTaskName, inertial3DObj)",
+    "inertial3DObj.sigma_R0N = [0., 0., 0.]  # set the desired inertial orientation",
+    ""
+]
+
+TEMPLATE_EXTERNAL_DISTURBANCE = [
+    "# === External Disturbance ===",
+    "extFTObject = extForceTorque.ExtForceTorque()",
+    "extFTObject.ModelTag = 'externalDisturbance'",
+    "scObject.addDynamicEffector(extFTObject)",
+    "scSim.AddModelToTask(simTaskName, extFTObject)",
+    ""
+]
+
+TEMPLATE_MASSAGE = [
+    "# === Message ===",
+    "# create the FSW vehicle configuration message",
+    "# use the same inertia in the FSW algorithm as in the simulation",
+    "vehicleConfigOut = messaging.VehicleConfigMsgPayload(ISCPntB_B=I)",
+    "configDataMsg = messaging.VehicleConfigMsg().write(vehicleConfigOut)",
+
+    "# connect the messages to the modules",
+    "sNavObject.scStateInMsg.subscribeTo(scObject.scStateOutMsg)",
+    "attError.attNavInMsg.subscribeTo(sNavObject.attOutMsg)",
+    "attError.attRefInMsg.subscribeTo(inertial3DObj.attRefOutMsg)",
+    "mrpControl.guidInMsg.subscribeTo(attError.attGuidOutMsg)",
+    "extFTObject.cmdTorqueInMsg.subscribeTo(mrpControl.cmdTorqueOutMsg)",
+    "mrpControl.vehConfigInMsg.subscribeTo(configDataMsg)",
+    ""
+]
+
 TEMPLATE_LOGGING = [
     "# === State Logging ===",
+    "samplingTime = unitTestSupport.samplingTime(simulationTime, simulationTimeStep, numDataPoints)",
     "dataLog = scObject.scStateOutMsg.recorder(samplingTime)",
     "scSim.AddModelToTask(simTaskName, dataLog)",
+    "attErrorLog = attError.attGuidOutMsg.recorder(samplingTime)",
+    "scSim.AddModelToTask(simTaskName, attErrorLog)",
+    "mrpLog = mrpControl.cmdTorqueOutMsg.recorder(samplingTime)",
+    "scSim.AddModelToTask(simTaskName, mrpLog)",
     ""
 ]
 
@@ -276,7 +352,7 @@ TEMPLATE_PLOT = [
     "plt.ylabel('Position (m)')",
     "plt.legend(['x', 'y', 'z'])",
     "plt.grid(True)",
-    "plt.savefig('position_xyz.png')",
+    "plt.savefig('temp/position_xyz.png')",
     ""
 ]
 
@@ -349,6 +425,10 @@ def assemble_script(flow_tasks: List[Dict]) -> str:
             for L in TEMPLATE_ORBIT:
                 lines.append("    " + L)
 
+        elif key == "control":
+            for L in TEMPLATE_CONTROL:
+                lines.append("    " + L)
+
         elif key == "reactionwheel":
             for L in TEMPLATE_RW:
                 lines.append("    " + L)
@@ -369,6 +449,14 @@ def assemble_script(flow_tasks: List[Dict]) -> str:
             for L in TEMPLATE_SIMPLENAV:
                 lines.append("    " + L)
 
+        elif key == "inertial3d":
+            for L in TEMPLATE_INERTIAL3D:
+                lines.append("    " + L)
+
+        elif key == "externaldisturbance":
+            for L in TEMPLATE_EXTERNAL_DISTURBANCE:
+                lines.append("    " + L)
+
         elif key == "srp":
             for L in TEMPLATE_SRP:
                 lines.append("    " + L)
@@ -387,20 +475,29 @@ def assemble_script(flow_tasks: List[Dict]) -> str:
             lines.append("    # (plot will be added after simulation)")
             lines.append("")
 
-        elif key == "run":
-            run_time = parse_run_time(desc, default_sec=10.0)
-            used["run"] = True
-            lines.append(f"    # parsed run_time = {run_time} s")
+        elif key == "simulationtime":
+            simulation_time = parse_run_time(desc, default_sec=86400.0)
+            used["simulationtime"] = True
+            lines.append(f"    simulationTime = {simulation_time}")
             lines.append("")
+
+        elif key == "numpoints":
+            num_points =  parse_run_time(desc, default_sec=400.0)
+            used["numpoints"] = True
+            lines.append(f"    numDataPoints = {num_points}")
+            lines.append("")
+
+        elif key == "message":
+            for L in TEMPLATE_MASSAGE:
+                lines.append("    " + L)
 
         used[key] = True
         lines.append("")
 
     # 4) 仿真执行
     lines.append("    # === Run Simulation ===")
-    lines.append(f"    simTime = macros.sec2nano({run_time})")
-    lines.append("    scSim.ConfigureStopTime(simTime)")
     lines.append("    scSim.InitializeSimulation()")
+    lines.append("    scSim.ConfigureStopTime(simulationTime)")
     lines.append("    scSim.ExecuteSimulation()")
     lines.append("")
 

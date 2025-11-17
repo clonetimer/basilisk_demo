@@ -18,6 +18,15 @@ CLASS_KEYWORDS = {
     "srp": ["radiationpressure"],
     "magfield": ["magneticfield"],
     "atmosphere": ["exponentialatmosphere", "msisatmosphere"],
+    "simulationtime": ["simulationtime"],
+    "numpoints": ["numdatapoints"],
+    "plot": ["plt"],
+    "logging": ["recorder"],
+    "control": ["mrpcontrol"],
+    "inertialn3d": ["inertial3d"],
+    "externaldisturbance": ["extforcetorque"],
+    "message": ["messaging"],
+    # "run": ["simulation"],
 }
 
 
@@ -33,6 +42,14 @@ MODULE_LABELS = {
     "srp": "Add SRP",
     "magfield": "Add magnetic field",
     "atmosphere": "Add atmosphere",
+    "simulationtime": "Set simulation time",
+    "numpoints": "Set num points",
+    "plot": "Plot results",
+    "logging": "Enable logging",
+    "control": "Add MRP control",
+    "inertialn3d": "Add inertial 3D nav",
+    "externaldisturbance": "Add external force torque",
+    "message": "Create message",
 }
 
 
@@ -40,6 +57,10 @@ def extract_actions(py_path: str):
     code = open(py_path, "r", encoding="utf-8").read()
     try:
         tree = ast.parse(code)
+        for node in ast.walk(tree):
+            # 检查节点是否是文档字符串（字符串字面量）
+            if isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant):
+                node.value.s = ''  # 清空文档字符串内容
     except SyntaxError:
         print(f"[WARN] Cannot parse {py_path}")
         return []
@@ -53,11 +74,15 @@ def extract_actions(py_path: str):
     return actions
 
 
+import re
+
 def classify_action(line: str):
     low = line.lower()
     for mod, kws in CLASS_KEYWORDS.items():
         for kw in kws:
-            if kw in low:
+            # 使用正则表达式进行全词匹配
+            if re.search(r'\b' + re.escape(kw) + r'\b', low):
+                print(f"[DEBUG] {line} → {mod}")
                 return mod
     return None
 
@@ -107,6 +132,6 @@ def generate_flow(example_py_path: str, out_flow_path: str):
 
 if __name__ == "__main__":
     # 示例：从某个 Basilisk example 生成 .flow
-    example = "./data/docs/to_flow/scenarioBasicOrbit.py"
+    example = "./data/docs/to_flow/scenarioAttitudePointing.py"
     out = example.replace(".py", ".flow")
     generate_flow(example, out)

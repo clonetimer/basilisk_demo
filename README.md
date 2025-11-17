@@ -1,32 +1,15 @@
 ## 使用流程小结
 
-1. **准备知识库文档**
 
-   * 把 Basilisk 文档 / 示例代码拷到 `data/docs/` 下
-   * 文件类型支持 `.txt .md .rst .py`
-
-2. **安装依赖**
+1. **安装依赖**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **构建 RAG 知识库**
+2. **写一个 Flowchart.js 文件**（可参考 `examples/simple.flow`）
 
-```bash
-python rule_extractor.py
-python kb_build.py
-```
-将生成：
-```bash
-kb/rules.json
-kb/bsk_index.faiss
-kb/bsk_chunks.json
-```
-
-4. **写一个 Flowchart.js 文件**（可参考 `examples/simple.flow`）
-
-5. **生成 Basilisk 仿真脚本**
+3. **生成 Basilisk 仿真脚本**
 
 ```bash
 python main.py examples/simple.flow
@@ -45,3 +28,10 @@ python basilisk_auto_sim.py
 
 ---
 
+## 调试日志v1
+1. 代码关键词匹配改为全词匹配。
+2. 因为最后一步默认是仿真运行，读取数据和画图从`example_to_flow`中删去，视需要再添加。
+3. 仿真时间和数据点数量，没有提取出来，需要自己设置。
+4. 流程图顺序可能不对，未使用`module_dependency`
+5. 未使用自动提取规则`rule_extract`和`kb_build`.
+6. 消息机制运行报错
